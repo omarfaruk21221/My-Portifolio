@@ -30,7 +30,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="sticky top-0 z-50">
+    <nav className=" sticky top-0 z-50">
       <div
         className="navbar
           max-w-7xl mx-auto
