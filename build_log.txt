@@ -1,0 +1,55 @@
+
+> my-portfolio@0.1.0 build
+> next build
+
+   ▲ Next.js 16.0.7 (Turbopack)
+
+   Creating an optimized production build ...
+/*! 🌼 daisyUI 5.5.8 */
+Found 1 warning while optimizing generated CSS:
+
+[2m│ }[22m
+[2m│ @layer base {[22m
+[2m│[22m   @property --radialprogress {
+[2m┆[22m            [33m[2m^--[22m Unknown at rule: @property[39m
+[2m┆[22m
+[2m│     syntax: "<percentage>";[22m
+[2m│     inherits: true;[22m
+
+
+> Build error occurred
+Error: Turbopack build failed with 2 errors:
+./tailwind.config.js:28:14
+Module not found: Can't resolve 'daisyui/src/theming/themes'
+[0m [90m 26 |[39m       {
+ [90m 27 |[39m         light[33m:[39m {
+[31m[1m>[22m[39m[90m 28 |[39m           [33m...[39mrequire([32m"daisyui/src/theming/themes"[39m)[[32m"light"[39m][33m,[39m
+ [90m    |[39m              [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 29 |[39m           primary[33m:[39m [32m"#007BFF"[39m[33m,[39m
+ [90m 30 |[39m           [32m"base-100"[39m[33m:[39m [32m"#F0F4F8"[39m[33m,[39m
+ [90m 31 |[39m         }[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./tailwind.config.js:33:14
+Module not found: Can't resolve 'daisyui/src/theming/themes'
+[0m [90m 31 |[39m         }[33m,[39m
+ [90m 32 |[39m         dark[33m:[39m {
+[31m[1m>[22m[39m[90m 33 |[39m           [33m...[39mrequire([32m"daisyui/src/theming/themes"[39m)[[32m"dark"[39m][33m,[39m
+ [90m    |[39m              [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 34 |[39m           primary[33m:[39m [32m"#007BFF"[39m[33m,[39m
+ [90m 35 |[39m           [32m"base-100"[39m[33m:[39m [32m"#0D1120"[39m[33m,[39m
+ [90m 36 |[39m         }[33m,[39m[0m
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./tailwind.config.js:28:14)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (./tailwind.config.js:33:14)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)

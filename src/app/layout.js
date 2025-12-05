@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const poppins = Poppins({
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-poppins",
+});
+
 export const metadata = {
   title: "Omar Faruk",
   description: "Omar Faruk — Full-stack web developer skilled in React, Next.js, Node.js, and modern web technologies."
@@ -23,7 +29,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-base-300`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} font-display antialiased bg-background-light dark:bg-background-dark text-gray-700 dark:text-gray-300`}
       >
 
         <Navbar />
