@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "degree": "BSc in Mathematics",
+        "institution": "Govt. Bangla College",
+        "seasion": "2022 - Present",
+        "icon": "/icons/graduation.svg",
+        "description": "Pursuing Bachelor of Science in Mathematics. Developing strong analytical and problem-solving skills through advanced mathematical theories and applications."
+    },
+    {
+        "id": 2,
+        "degree": "HSC in Science",
+        "institution": "Samsul Hok Degree College",
+        "seasion": "2020 - 2022",
+        "icon": "/icons/graduation.svg",
+        "description": "Higher Secondary Certificate in Science. Focused on Physics, Chemistry, and Mathematics, building a solid foundation for scientific studies."
+    },
+    {
+        "id": 3,
+        "degree": "SSC in Science",
+        "institution": "Laxmipur School and College",
+        "seasion": "2018 - 2020",
+        "icon": "/icons/graduation.svg",
+        "description": "Secondary School Certificate in Science group. Excellence in academic performance, participated in various science fairs and extracurricular activities."
+    }
+]

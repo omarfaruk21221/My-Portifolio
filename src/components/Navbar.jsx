@@ -3,20 +3,14 @@ import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
+import { FaBars, FaTimes, FaHome, FaUser, FaCode, FaBriefcase, FaGraduationCap, FaPaperPlane } from 'react-icons/fa';
 
 export default function Navbar() {
-  const [theme, setTheme] = useState("light");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const logoRef = useRef(null);
 
-  // Theme Toggle Logic
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.querySelector("html").setAttribute("data-theme", newTheme);
-  };
-
-  // Scroll Detection for Glass/Floating effect
+  // Scroll Detection for Glass effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -31,7 +25,7 @@ export default function Navbar() {
     if (logo) {
       const hover = gsap.to(logo, {
         scale: 1.1,
-        rotation: 5,
+        rotation: 3,
         duration: 0.3,
         paused: true,
         ease: "power1.out",
@@ -42,144 +36,113 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Color", path: "/color" },
-    { name: "Project", path: "/project" },
-    { name: "Resume", path: "/resume" },
+    { name: "Home", path: "/", icon: <FaHome /> },
+    { name: "About", path: "/aboutMe", icon: <FaUser /> },
+    { name: "Skills", path: "/skills", icon: <FaCode /> },
+    { name: "Project", path: "/projects", icon: <FaBriefcase /> },
+    { name: "Education", path: "/education", icon: <FaGraduationCap /> },
   ];
 
   // Framer Motion Variants
-  const containerVariants = {
+  const navVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        staggerChildren: 0.1,
-        duration: 0.5,
-      },
+      transition: { duration: 0.5, ease: "easeOut" }
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: -10 },
-    visible: { opacity: 1, y: 0 },
+  const mobileMenuVariants = {
+    closed: { opacity: 0, height: 0 },
+    open: { opacity: 1, height: "auto", transition: { duration: 0.3 } }
   };
 
   return (
-    <div className="flex justify-center w-full sticky top-4 z-50 px-4">
+    <>
       <motion.nav
         initial="hidden"
         animate="visible"
-        variants={containerVariants}
-        className={`navbar max-w-7xl w-full rounded-2xl transition-all duration-300 ease-in-out
-          ${
-            isScrolled
-              ? "bg-base-100/70 backdrop-blur-xl shadow-2xl border border-white/10"
-              : "bg-base-100/30 backdrop-blur-md shadow-lg border border-transparent"
-          }
-        `}
+        variants={navVariants}
+        className={`fixed  top-0 left-0 w-full z-50 transition-all duration-300 font-display ${isScrolled
+            ? "bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50 py-3 shadow-lg shadow-purple-500/5"
+            : "bg-transparent py-5"
+          }`}
       >
-        <div className="navbar-start">
-          <div className="dropdown">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn btn-ghost lg:hidden hover:bg-white/10"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100/90 backdrop-blur-md rounded-box z-1 mt-3 w-52 p-2 shadow-xl border border-white/5"
-            >
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.path}>{link.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <a
-            ref={logoRef}
-            className="btn btn-ghost text-xl font-bold tracking-tighter bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:bg-white/5 transition-colors"
-          >
-            Omar Faruk
-          </a>
-        </div>
+        <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" ref={logoRef} className="text-2xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent flex items-center gap-2">
+            <span className="text-3xl">✨</span> Omar Faruk
+          </Link>
 
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-2">
+          {/* Desktop Menu */}
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <motion.li key={link.name} variants={itemVariants}>
-                <Link
-                  href={link.path}
-                  className="hover:text-primary transition-colors font-medium relative group"
-                >
-                  {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
-                </Link>
-              </motion.li>
+              <Link
+                key={link.name}
+                href={link.path}
+                className="relative px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors group flex items-center gap-2"
+              >
+                {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 dark:bg-purple-400 transition-all duration-300 group-hover:w-full opacity-50" />
+              </Link>
             ))}
-          </ul>
+          </div>
+
+          {/* Call to Action */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href="/contact"
+              className="px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-full hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+            >
+              <FaPaperPlane className="text-sm" />
+              Hire Me
+            </Link>
+          </div>
+
+          {/* Mobile Toggle */}
+          <button
+            className="lg:hidden text-2xl text-slate-700 dark:text-slate-200"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
         </div>
 
-        <div className="navbar-end">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={toggleTheme}
-            className="btn btn-ghost btn-circle hover:bg-white/10 transition-colors"
-            title="Toggle Theme"
-          >
-            {theme === "light" ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-            )}
-          </motion.button>
-        </div>
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={mobileMenuVariants}
+              className="lg:hidden absolute top-full left-0 w-full bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 overflow-hidden shadow-xl"
+            >
+              <div className="flex flex-col p-6 gap-2">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-3 p-4 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium border border-transparent hover:border-purple-100 dark:hover:border-purple-800/50"
+                  >
+                    <span className="text-xl opacity-70">{link.icon}</span>
+                    {link.name}
+                  </Link>
+                ))}
+                <Link
+                  href="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="mt-4 w-full py-4 bg-primary text-white font-bold rounded-xl flex items-center justify-center gap-2"
+                >
+                  <FaPaperPlane /> Hire Me
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.nav>
-    </div>
+    </>
   );
 }

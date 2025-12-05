@@ -1,0 +1,125 @@
+[
+  {
+    "project_name": "Study Mate",
+    "project_image": "/assets/projectbannar/Stude Mate.png",
+    "full_title": "Study Mate – Online Study Platform",
+    "short_description": "A modern, interactive online study platform designed for students to organize notes, create flashcards, and track their learning progress.",
+    "type": "Educational Platform",
+    "date": "2025-11",
+    "features": [
+      "Organize and manage study notes",
+      "Interactive flashcard learning system",
+      "Progress tracking dashboard",
+      "Fully responsive design",
+      "Clean and user-friendly interface"
+    ],
+    "tech_stack": [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "Netlify"
+    ],
+    "live_link": "https://studymatea10.netlify.app/",
+    "source_code": "https://github.com/omarfaruk21221/Study-Mate",
+    "status": "Completed"
+  },
+  {
+    "project_name": "Zap Shift",
+    "project_image": "/assets/projectbannar/Zap shift bannar.png",
+    "full_title": "Zap Shift – Parcel Transfer Digital Platform",
+    "short_description": "A modern parcel transfer and delivery management platform that digitizes parcel booking, tracking, and rider assignment for seamless logistics operations.",
+    "type": "Logistics & Delivery Platform",
+    "date": "2025-11",
+    "features": [
+      "Parcel booking & management",
+      "Rider assignment system",
+      "Real-time delivery tracking UI",
+      "User dashboard for senders & riders",
+      "Secure authentication system",
+      "Responsive and mobile-friendly design"
+    ],
+    "tech_stack": [
+      "React",
+      "Tailwind CSS",
+      "Firebase",
+      "JavaScript"
+    ],
+    "live_link": "https://zap-shift-c9e57.web.app/",
+    "source_code": "https://github.com/omarfaruk21221/Zap-Shift",
+    "status": "Completed"
+  },
+  {
+    "project_name": "SkillBloom",
+    "project_image": "/assets/projectbannar/Skill bloom.png",
+    "full_title": "SkillBloom – Online Skill Development Platform",
+    "short_description": "A learning platform that helps users discover, explore, and develop new skills through curated courses and structured learning content.",
+    "type": "E-Learning / Skill Development",
+    "date": "2025-11",
+    "features": [
+      "Course browsing & filtering",
+      "Skill category pages",
+      "Instructor information",
+      "Responsive and intuitive UI",
+      "Modern card-based layout"
+    ],
+    "tech_stack": [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "Netlify"
+    ],
+    "live_link": "https://skill-bloom.netlify.app/",
+    "source_code": "https://github.com/omarfaruk21221/Skill-Bloom",
+    "status": "Completed"
+  },
+  {
+    "project_name": "Hero App",
+    "project_image": "/assets/projectbannar/heroApp.png",
+    "full_title": "Hero App – Online App Store",
+    "short_description": "A dynamic online app store where users can explore applications, check ratings, and view details in a clean and responsive interface.",
+    "type": "Web Application Store",
+    "date": "2025-10",
+    "features": [
+      "App list with details",
+      "Search & filter functionality",
+      "Rating and review UI",
+      "Responsive layout",
+      "Fast and lightweight UI/UX"
+    ],
+    "tech_stack": [
+      "React",
+      "Tailwind CSS",
+      "JavaScript",
+      "Netlify"
+    ],
+    "live_link": "https://a8-hero-app.netlify.app/",
+    "source_code": "https://github.com/omarfaruk21221/A8-Hero-Apps",
+    "status": "Completed"
+  },
+  {
+    "project_name": "RedLife",
+    "project_image": "/assets/projectbannar/RedLife.png",
+    "full_title": "RedLife – Blood Donor Management Platform",
+    "short_description": "A digital platform designed to connect blood donors with recipients, manage donation history, and streamline emergency blood requests.",
+    "type": "Health & Donation Management",
+    "date": "2025-11",
+    "features": [
+      "Blood donor registration",
+      "User roles and authentication",
+      "Donation request system",
+      "Donor search by group & location",
+      "Responsive and clean UI"
+    ],
+    "tech_stack": [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Vercel"
+    ],
+    "live_link": "https://redlife-frontend.vercel.app/",
+    "source_code": "https://github.com/omarfaruk21221/RedLife",
+    "status": "Completed"
+  }
+]

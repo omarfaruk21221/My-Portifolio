@@ -2,9 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import mayphoto1 from "../../public/mayphoto1.png";
-import myphoto2 from "../../public/myphoto2.png";
-import fileIcon from "../../public/file.svg";
+import mayphoto1 from "../../public/assets/mayphoto1.png";
+import myphoto2 from "../../public/assets/myphoto2.png";
+import fileIcon from "../../public/assets/file.svg";
 
 const banners = [mayphoto1, myphoto2];
 
@@ -24,7 +24,7 @@ export default function Bannar() {
           <p className="text-gray-400 max-w-md">
             I'm a passionate Full-Stack Web Developer with a strong foundation in both frontend and backend technologies. My journey in web development began with a deep love for creating dynamic and interactive user interfaces. I've since honed my skills in building responsive, performant, and scalable web applications.
           </p>
-          <Link href="/resume.pdf" className="btn btn-primary text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-2 group transition-transform transform hover:scale-105 shadow-lg shadow-blue-500/30">
+          <Link href="https://drive.google.com/file/d/1-QcwwTf5xkK8m_smUfzJC0d_bD8af5l-/view?usp=sharing" target="_blank" className="btn btn-primary text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-2 group transition-transform transform hover:scale-105 shadow-lg shadow-blue-500/30">
             Resume Download <Image className="text-white" src={fileIcon} alt="file-icon" />
           </Link>
         </div>

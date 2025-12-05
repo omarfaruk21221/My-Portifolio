@@ -1,0 +1,114 @@
+[
+    {
+        "category": "Frontend Development",
+        "icon": "🎨",
+        "iconColor": "text-yellow-400",
+        "bgColor": "bg-yellow-400/20",
+        "skills": [
+            {
+                "name": "JavaScript",
+                "level": 95
+            },
+            {
+                "name": "React",
+                "level": 95
+            },
+            {
+                "name": "Next.js",
+                "level": 75
+            },
+            {
+                "name": "HTML",
+                "level": 98
+            },
+            {
+                "name": "CSS",
+                "level": 98
+            },
+            {
+                "name": "Tailwind CSS",
+                "level": 97
+            },
+            {
+                "name": "Bootstrap",
+                "level": 95
+            },{
+                "name": "daisy UI",
+                "level": 95
+            }
+        ]
+    },
+    {
+        "category": "Backend Development",
+        "icon": "⚙️",
+        "iconColor": "text-gray-400",
+        "bgColor": "bg-gray-400/20",
+        "skills": [
+            {
+                "name": "Node.js",
+                "level": 88
+            },
+            {
+                "name": "Express.js",
+                "level": 92
+            },
+            {
+                "name": "MongoDB",
+                "level": 80
+            },
+            {
+                "name": "REST APIs",
+                "level": 40
+            },
+            {
+                "name": "Firebase",
+                "level": 92
+            },
+            {
+                "name": "JWT",
+                "level": 85
+            }
+
+        ]
+    },
+    {
+        "category": "Tools & Technologies",
+        "icon": "🛠️",
+        "iconColor": "text-orange-400",
+        "bgColor": "bg-orange-400/20",
+        "skills": [
+            {
+                "name": "Git & GitHub",
+                "level": 90
+            },
+            {
+                "name": "VS Code",
+                "level": 98
+            },
+            {
+                "name": "Figma",
+                "level": 95
+            },
+            {
+                "name": "Antigravite",
+                "level": 55
+            },
+            {
+                "name": "Postman",
+                "level": 85
+            },
+            {
+                "name": "Vite",
+                "level": 88
+            },
+            {
+                "name": "Vercel",
+                "level": 80
+            },
+            {
+                "name": "Netlify",
+                "level": 92
+            }
+        ]
+    }
+]
