@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 
 export default function BannarPage() {
     return (
-        <section className="bg-gradient-to-br from-base-100 to-base-200 text-base-content font-display antialiased min-h-screen relative overflow-hidden px-20 md:px-40 py-30 flex items-center">
+        <section className="bg-gradient-to-br from-base-100 to-base-200 text-base-content font-display antialiased min-h-screen relative overflow-hidden px-6 sm:px-12 md:px-20 lg:px-40 py-20 md:py-32 flex items-center">
             {/* Background Shapes & Profile Image */}
 
             {/* Large Circle with Image */}
-            <div className="absolute top-89 right-70 transform -translate-y-1/2 translate-x-1/4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] lg:w-[40rem] lg:h-[40rem] rounded-full border  border-secondary/20 flex items-center justify-center z-10">
+            <div className="absolute top-[22rem] right-[5rem] lg:right-[17rem] transform -translate-y-1/2 translate-x-1/4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] lg:w-[40rem] lg:h-[40rem] rounded-full border border-secondary/20 flex items-center justify-center z-10 opacity-60 md:opacity-100">
                 <div className="relative z-10 w-full h-full object-contain rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-transparent">
                     <Image
                         src="/assets/profile-rbg.png"
@@ -23,36 +23,43 @@ export default function BannarPage() {
                 </div>
             </div>
 
-            {/* Decorative Smaller Circle */}
-            <div className="absolute top-99 -right-20 transform -translate-y-1/2 translate-x-1/4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] lg:w-[55rem] lg:h-[35rem] rounded-full border-2 border-primary bg-gradient-to-br from-secondary/70 via-primary/30 to-transparent  flex items-center justify-center -z-0"></div>
-             {/* Decorative Smaller Circle */}
+            {/* Decorative Smaller Circle 1 */}
+            <div className="absolute top-[25rem] -right-20 transform -translate-y-1/2 translate-x-1/4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] lg:w-[55rem] lg:h-[35rem] rounded-full border-2 border-primary bg-gradient-to-br from-secondary/70 via-primary/30 to-transparent flex items-center justify-center -z-0 opacity-40"></div>
+
+            {/* Decorative Smaller Circle 2 */}
             <div className="absolute top-1/2 right-0 transform -translate-y-full translate-x-2/3 w-32 h-32 md:w-48 md:h-48 rounded-full bg-primary/10 -z-0"></div>
-            {/* Decorative Smaller Circle */}
-            <div className="absolute top-1/9 right-20 transform -translate-y-full translate-x-2/3 w-32 h-32 md:w-48 md:h-48 rounded-full bg-primary/10 -z-0"></div>
+
+            {/* Decorative Smaller Circle 3 */}
+            <div className="absolute top-[11%] right-20 transform -translate-y-full translate-x-2/3 w-32 h-32 md:w-48 md:h-48 rounded-full bg-primary/10 -z-0"></div>
 
             {/* Main Content */}
-            <main className="container mx-auto relative z-10 w-full">
-                <div className="max-w-2xl">
-                    <p className="text-xl text-base-content/70 mb-2 font-medium">Hello, I&apos;m</p>
+            <main className="container mx-auto relative z-20 w-full">
+                <div className="max-w-3xl">
+                    <p className="text-xl md:text-2xl text-base-content/70 mb-2 font-medium">Hello, I&apos;m</p>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-base-content leading-tight tracking-tight">
                         Omar Faruk
                     </h1>
                     <div className="w-32 h-1.5 bg-gradient-to-r from-primary to-secondary my-8 rounded-full"></div>
                     <h2 className="text-xl md:text-4xl font-semibold text-primary mb-6">Full Stack Developer</h2>
-                    <p className="mt-4 text-md md:text-lg text-base-content/40 leading-relaxed max-w-lg">
+                    <p className="mt-4 text-md md:text-lg text-base-content/80 leading-relaxed max-w-lg">
                         I&apos;m a passionate Full-Stack Web Developer with a strong foundation in both frontend and backend technologies. My journey in web development began with a deep love for creating dynamic and interactive user interfaces. I&apos;ve since honed my skills in building responsive, performant, and scalable web applications.
                     </p>
 
                     <div className="mt-10 flex flex-wrap items-center gap-4">
-                        <Link
+                        <a
                             href="https://drive.google.com/file/d/1-QcwwTf5xkK8m_smUfzJC0d_bD8af5l-/view?usp=sharing"
                             target="_blank"
                             className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-full shadow-lg hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300 transform"
                         >
                             <FaDownload className="mr-2 text-lg" />
                             Download Resume
+                        </a>
+                        <Link
+                            href="/contact"
+                            className="px-8 py-4 bg-transparent border-2 border-base-content/20 text-base-content font-bold rounded-full hover:bg-base-content/5 hover:border-base-content hover:-translate-y-1 transition-all duration-300"
+                        >
+                            Contact Me
                         </Link>
-
                     </div>
 
                     {/* Social Icons */}

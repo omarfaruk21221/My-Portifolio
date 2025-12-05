@@ -27,7 +27,7 @@ export default function Education() {
         return () => current && observer.unobserve(current);
     }, []);
 
-    if (educationData.length === 0) return null; // Or a loading spinner
+    if (educationData.length === 0) return null;
 
     const activeItem = educationData.find(item => item.id === activeTab) || educationData[0];
 
@@ -35,9 +35,19 @@ export default function Education() {
         <section
             ref={sectionRef}
             id="education"
-            className="min-h-screen bg-slate-100 dark:bg-slate-950 py-24 relative overflow-hidden font-display"
+            className="min-h-screen bg-gradient-to-br from-base-100 to-base-200 text-base-content font-display antialiased py-24 relative overflow-hidden"
         >
-            {/* Floating Background Elements */}
+            {/* Background Decorative Shapes (New Style, adapted to Purple) */}
+            <div className="absolute top-[10%] -left-20 transform translate-x-1/4 w-[20rem] h-[20rem] md:w-[30rem] md:h-[30rem] rounded-full border border-purple-500/10 flex items-center justify-center -z-0 opacity-40"></div>
+            <div className="absolute bottom-[20%] right-[-10%] transform -translate-y-1/2 w-[25rem] h-[25rem] md:w-[40rem] md:h-[40rem] rounded-full border border-indigo-500/10 flex items-center justify-center -z-0 opacity-30">
+                <div className="w-full h-full rounded-full bg-gradient-to-tl from-indigo-500/5 to-transparent"></div>
+            </div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-7xl mx-auto -z-0 pointer-events-none">
+                <div className="absolute top-20 right-20 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 left-20 w-40 h-40 bg-indigo-500/5 rounded-full blur-3xl"></div>
+            </div>
+
+            {/* Floating Background Elements (Purple Particles) */}
             <div className="absolute inset-0 pointer-events-none">
                 {Array.from({ length: 12 }).map((_, i) => (
                     <motion.div
@@ -61,7 +71,7 @@ export default function Education() {
             </div>
 
             <div className="container mx-auto px-6 max-w-7xl relative z-10">
-                {/* Header */}
+                {/* Header (Original Purple Styling) */}
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -80,7 +90,7 @@ export default function Education() {
                     </p>
                 </motion.div>
 
-                {/* Tab Navigation */}
+                {/* Tab Navigation (Original Purple Styling) */}
                 <div className="max-w-4xl mx-auto mb-20">
                     <div className="flex flex-wrap gap-4 justify-center mb-16">
                         {educationData.map((edu) => (
@@ -88,8 +98,8 @@ export default function Education() {
                                 key={edu.id}
                                 onClick={() => setActiveTab(edu.id)}
                                 className={`group relative p-6 px-8 rounded-3xl font-semibold text-lg transition-all duration-500 flex items-center gap-4 min-w-[280px] ${activeTab === edu.id
-                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-2xl shadow-purple-500/40 scale-105'
-                                        : 'bg-white dark:bg-slate-900/50 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/80 border-2 border-slate-200 dark:border-slate-700/50 hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 hover:border-purple-500/50'
+                                    ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-2xl shadow-purple-500/40 scale-105'
+                                    : 'bg-white/40 dark:bg-slate-900/40 text-slate-600 dark:text-slate-300 hover:bg-slate-50/60 dark:hover:bg-slate-800/60 border-2 border-slate-200/50 dark:border-slate-700/50 hover:shadow-xl hover:shadow-purple-500/25 hover:scale-105 hover:border-purple-500/50'
                                     }`}
                                 whileHover={{ y: -8 }}
                                 whileTap={{ scale: 0.98 }}
@@ -106,7 +116,7 @@ export default function Education() {
                         ))}
                     </div>
 
-                    {/* Active Content */}
+                    {/* Active Content (Original Purple Styling) */}
                     <AnimatePresence mode="wait">
                         {activeItem && (
                             <motion.div
@@ -115,7 +125,7 @@ export default function Education() {
                                 animate={{ opacity: 1, scale: 1, x: 0 }}
                                 exit={{ opacity: 0, scale: 0.95, x: -30 }}
                                 transition={{ duration: 0.5, ease: 'easeInOut' }}
-                                className="bg-white/80 dark:bg-slate-900/70 backdrop-blur-xl border border-slate-200 dark:border-slate-800/50 rounded-4xl p-12 lg:p-20 shadow-2xl shadow-slate-900/10 dark:shadow-slate-900/50 max-w-5xl mx-auto"
+                                className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200 dark:border-slate-800/50 rounded-4xl p-12 lg:p-20 shadow-2xl shadow-slate-900/10 dark:shadow-slate-900/50 max-w-5xl mx-auto"
                             >
                                 <div className="lg:flex lg:items-center lg:gap-12 mb-12">
                                     <div className="lg:flex-shrink-0 mb-8 lg:mb-0">
@@ -123,7 +133,7 @@ export default function Education() {
                                             {activeItem.degree}
                                         </h3>
                                         <div className="flex flex-wrap items-center gap-6 text-slate-500 dark:text-slate-400">
-                                            <div className="flex items-center gap-3 px-5 py-3 bg-slate-100 dark:bg-slate-800/60 backdrop-blur rounded-2xl border border-slate-200 dark:border-slate-700/50">
+                                            <div className="flex items-center gap-3 px-5 py-3 bg-slate-100/50 dark:bg-slate-800/60 backdrop-blur rounded-2xl border border-slate-200 dark:border-slate-700/50">
                                                 <span className="text-xl">🏫</span>
                                                 <span className="font-semibold">{activeItem.institution}</span>
                                             </div>
